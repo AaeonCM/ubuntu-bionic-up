@@ -100,6 +100,7 @@ bool regmap_writeable(struct regmap *map, unsigned int reg)
 
 	return true;
 }
+EXPORT_SYMBOL_GPL(regmap_writeable);
 
 bool regmap_cached(struct regmap *map, unsigned int reg)
 {
@@ -123,6 +124,7 @@ bool regmap_cached(struct regmap *map, unsigned int reg)
 
 	return true;
 }
+EXPORT_SYMBOL_GPL(regmap_cached);
 
 bool regmap_readable(struct regmap *map, unsigned int reg)
 {
@@ -143,6 +145,7 @@ bool regmap_readable(struct regmap *map, unsigned int reg)
 
 	return true;
 }
+EXPORT_SYMBOL_GPL(regmap_readable);
 
 bool regmap_volatile(struct regmap *map, unsigned int reg)
 {
@@ -160,6 +163,7 @@ bool regmap_volatile(struct regmap *map, unsigned int reg)
 	else
 		return true;
 }
+EXPORT_SYMBOL_GPL(regmap_volatile);
 
 bool regmap_precious(struct regmap *map, unsigned int reg)
 {
@@ -174,6 +178,7 @@ bool regmap_precious(struct regmap *map, unsigned int reg)
 
 	return false;
 }
+EXPORT_SYMBOL_GPL(regmap_precious);
 
 bool regmap_writeable_noinc(struct regmap *map, unsigned int reg)
 {
