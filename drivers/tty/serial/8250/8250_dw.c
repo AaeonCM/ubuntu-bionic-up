@@ -47,6 +47,7 @@ struct dw8250_data {
 
 	unsigned int		skip_autocfg:1;
 	unsigned int		uart_16550_compatible:1;
+	unsigned int		skip_dma:1;
 };
 
 static inline struct dw8250_data *to_dw8250_data(struct dw8250_port_data *data)
@@ -371,10 +372,13 @@ static void dw8250_quirks(struct uart_port *p, struct dw8250_data *data)
 		p->regshift = 2;
 		p->serial_in = dw8250_serial_in32;
 		data->uart_16550_compatible = true;
+	} else if (acpi_dev_present("8086228A", NULL, -1)) {
+		data->skip_dma = true;
 	}
 
 	/* Platforms with iDMA 64-bit */
-	if (platform_get_resource_byname(to_platform_device(p->dev),
+	if (!data->skip_dma &&
+            platform_get_resource_byname(to_platform_device(p->dev),
 					 IORESOURCE_MEM, "lpss_priv")) {
 		data->data.dma.rx_param = p->dev->parent;
 		data->data.dma.tx_param = p->dev->parent;
@@ -521,7 +525,7 @@ static int dw8250_probe(struct platform_device *pdev)
 		dw8250_setup_port(p);
 
 	/* If we have a valid fifosize, try hooking up DMA */
-	if (p->fifosize) {
+	if (!data->skip_dma && p->fifosize) {
 		data->data.dma.rxconf.src_maxburst = p->fifosize / 4;
 		data->data.dma.txconf.dst_maxburst = p->fifosize / 4;
 		up->dma = &data->data.dma;
