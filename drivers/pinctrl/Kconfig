@@ -349,6 +349,18 @@ config PINCTRL_RK805
 	help
 	  This selects the pinctrl driver for RK805.
 
+config PINCTRL_UPBOARD
+	tristate "UP board FPGA pin controller"
+	depends on ACPI
+	depends on MFD_UPBOARD_FPGA
+	select GENERIC_PINCONF
+	select PINMUX
+	select PINCONF
+	help
+	  Pin controller for the FPGA GPIO lines on UP boards. Due to the
+	  hardware layout, these are meant to be controlled in tandem with their
+	  corresponding Intel SoC GPIOs.
+
 config PINCTRL_OCELOT
 	bool "Pinctrl driver for the Microsemi Ocelot and Jaguar2 SoCs"
 	depends on OF
