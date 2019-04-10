@@ -203,7 +203,6 @@ static const struct reg_sequence upboard_up_reg_patches[] __initconst = {
 		BIT(UPFPGA_UP_I2C1_SDA)	    |
 		BIT(UPFPGA_UP_I2C1_SCL)	    |
 		BIT(UPFPGA_UP_ADC0)	    |
-		BIT(UPFPGA_UP_GPIO17)	    |
 		BIT(UPFPGA_UP_GPIO27)	    |
 		BIT(UPFPGA_UP_GPIO22)	    |
 		BIT(UPFPGA_UP_SPI_MISO)	    |
