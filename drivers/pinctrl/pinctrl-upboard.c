@@ -840,6 +840,13 @@ static const struct dmi_system_id upboard_dmi_table[] __initconst = {
 		},
 		.driver_data = (void *)&upboard_up2_bios_info_v0_3,
 	},
+	{
+		.matches = { /* UP Xtreme */
+			DMI_EXACT_MATCH(DMI_SYS_VENDOR, "AAEON"),
+			DMI_EXACT_MATCH(DMI_BIOS_DATE, "03/18/2019"),
+		},
+		.driver_data = (void *)&upboard_up_bios_info_dvt,
+	},
 	{ },
 };
 
@@ -865,7 +872,7 @@ static int __init upboard_pinctrl_probe(struct platform_device *pdev)
 		return -ENODEV;
 
 	hid = acpi_device_hid(adev);
-	if (!strcmp(hid, "AANT0F00")) {
+	if (!strcmp(hid, "AANT0F00") || !strcmp(hid, "AANT0F04")) {
 		pctldesc = &upboard_up_pinctrl_desc;
 		rpi_mapping = upboard_up_rpi_mapping;
 		ngpio  = ARRAY_SIZE(upboard_up_rpi_mapping);
