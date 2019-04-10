@@ -308,6 +308,7 @@ static const struct acpi_device_id upboard_fpga_acpi_match[] = {
 	{ "AANT0F01", (kernel_ulong_t)&upboard_up2_fpga_data },
 	{ "AANT0F02", (kernel_ulong_t)&upboard_upcore_crex_fpga_data },
 	{ "AANT0F03", (kernel_ulong_t)&upboard_upcore_crst02_fpga_data },
+	{ "AANT0F04", (kernel_ulong_t)&upboard_up_fpga_data },
 	{ }
 };
 MODULE_DEVICE_TABLE(acpi, upboard_fpga_acpi_match);
@@ -340,6 +341,13 @@ static const struct dmi_system_id upboard_dmi_table[] __initconst = {
 			DMI_EXACT_MATCH(DMI_BOARD_VERSION, "V0.4"),
 		},
 		.driver_data = (void *)UPFPGA_QUIRK_HRV1_IS_PROTO2,
+	},
+	{
+		.matches = { /* UP Xtreme */
+			DMI_EXACT_MATCH(DMI_SYS_VENDOR, "AAEON"),
+			DMI_EXACT_MATCH(DMI_BIOS_DATE, "03/18/2019"),
+		},
+		.driver_data = (void *)UPFPGA_QUIRK_UNINITIALISED,
 	},
 	{ },
 };
