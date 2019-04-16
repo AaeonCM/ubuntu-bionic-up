@@ -894,8 +894,10 @@ EXPORT_SYMBOL_GPL(pinctrl_gpio_direction_output);
 int pinctrl_gpio_set_config(unsigned gpio, unsigned long config)
 {
 	unsigned long configs[] = { config };
+	struct pinctrl_gpio_range *range = NULL;
 	struct pinctrl_dev *pctldev;
 	struct gpio_desc *desc;
+	int pin;
 	int dir;
 	int ret = -EPROBE_DEFER;
 
@@ -922,11 +924,19 @@ int pinctrl_gpio_set_config(unsigned gpio, unsigned long config)
 	 */
 	if (dir == 1) {
 		list_for_each_entry(pctldev, &pinctrldev_list, node) {
-			ret = pinconf_set_config(pctldev, gpio, configs, ARRAY_SIZE(configs));
+			range = pinctrl_match_gpio_range(pctldev, gpio);
+			if (range == NULL)
+				continue;
+			pin = gpio_to_pin(range, gpio);
+			ret = pinconf_set_config(pctldev, pin, configs, ARRAY_SIZE(configs));
 		}
 	} else {
 		list_for_each_entry_reverse(pctldev, &pinctrldev_list, node) {
-			ret = pinconf_set_config(pctldev, gpio, configs, ARRAY_SIZE(configs));
+			range = pinctrl_match_gpio_range(pctldev, gpio);
+			if (range == NULL)
+				continue;
+			pin = gpio_to_pin(range, gpio);
+			ret = pinconf_set_config(pctldev, pin, configs, ARRAY_SIZE(configs));
 		}
 	}
 
