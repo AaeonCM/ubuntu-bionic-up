@@ -842,7 +842,7 @@ static const struct dmi_system_id upboard_dmi_table[] __initconst = {
 	{
 		.matches = { /* UP Xtreme */
 			DMI_EXACT_MATCH(DMI_SYS_VENDOR, "AAEON"),
-			DMI_EXACT_MATCH(DMI_BIOS_DATE, "03/18/2019"),
+			DMI_EXACT_MATCH(DMI_BIOS_DATE, "04/11/2019"),
 		},
 		.driver_data = (void *)&upboard_up_bios_info_dvt,
 	},
