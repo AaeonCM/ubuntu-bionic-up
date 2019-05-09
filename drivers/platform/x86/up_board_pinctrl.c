@@ -622,7 +622,7 @@ static int up_gpio_request(struct gpio_chip *gc, unsigned offset)
 	struct up_pin_info *pin = &up_pctrl->board->pins[offset];
 	struct gpio_desc *desc = pin->soc_gpio.desc;
 
-	pinctrl_request_gpio(gc->base + offset);
+	pinctrl_gpio_request(gc->base + offset);
 	return gpio_request(desc_to_gpio(desc), gc->label);
 }
 
@@ -632,7 +632,7 @@ static void up_gpio_free(struct gpio_chip *gc, unsigned offset)
 	struct up_pin_info *pin = &up_pctrl->board->pins[offset];
 	struct gpio_desc *desc = pin->soc_gpio.desc;
 
-	pinctrl_free_gpio(gc->base + offset);
+	pinctrl_gpio_free(gc->base + offset);
 	gpio_free(desc_to_gpio(desc));
 }
 
@@ -908,7 +908,7 @@ static int up_pinctrl_probe(struct platform_device *pdev)
 		struct up_pin_info *pin = &board->pins[offset];
 		struct irq_data *irq_data;
 
-		pin->irq = irq_find_mapping(up_pctrl->chip.irqdomain, offset);
+		pin->irq = irq_find_mapping(up_pctrl->chip.irq.domain, offset);
 		pin->soc_gpio.irq = gpiod_to_irq(pin->soc_gpio.desc);
 		irq_set_parent(pin->irq, pin->soc_gpio.irq);
 		irq_data = irq_get_irq_data(pin->irq);
