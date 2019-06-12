@@ -1,0 +1,11 @@
+linux-hwe-edge (5.0.0-0.1~upboard1) bionic; urgency=medium
+
+  * Placeholder.
+
+ -- Ubilinux Team <ubilinux@emutex.com>  Wed, 12 May 2019 11:14:32 +0100
+
+linux-hwe-edge (5.0.0-0.0~upboard1) bionic; urgency=medium
+
+  * Dummy entry.
+
+ -- Ubilinux Team <ubilinux@emutex.com>  Wed, 12 May 2019 10:56:11 +0100
