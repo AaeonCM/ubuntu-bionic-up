@@ -1,8 +1,10 @@
 linux-hwe-edge (5.0.0-0.1~upboard1) bionic; urgency=medium
 
-  * Placeholder.
+  * Initial release. (Closes: #000)
+  * Based on Ubuntu version: linux-hwe-edge: 5.0.0-16.17~18.04.1
+  * Patches added to provide support for UP board family
 
- -- Ubilinux Team <ubilinux@emutex.com>  Wed, 12 May 2019 11:14:32 +0100
+ -- Ubilinux Team <ubilinux@emutex.com>  Wed, 12 May 2019 11:20:13 +0100
 
 linux-hwe-edge (5.0.0-0.0~upboard1) bionic; urgency=medium
 
