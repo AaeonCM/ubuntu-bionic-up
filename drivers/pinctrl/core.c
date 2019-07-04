@@ -882,6 +882,26 @@ int pinctrl_gpio_direction_output(unsigned gpio)
 }
 EXPORT_SYMBOL_GPL(pinctrl_gpio_direction_output);
 
+static int pinctrl_set_config_if_match(struct pinctrl_dev *pctldev,
+					unsigned int gpio, unsigned long config)
+{
+	struct pinctrl_gpio_range *range;
+	int ret = 0;
+
+	range = pinctrl_match_gpio_range(pctldev, gpio);
+
+	if (range != NULL) {
+		int pin;
+
+		mutex_lock(&pctldev->mutex);
+		pin = gpio_to_pin(range, gpio);
+		ret = pinconf_set_config(pctldev, pin, &config, 1);
+		mutex_unlock(&pctldev->mutex);
+	}
+
+	return ret;
+}
+
 /**
  * pinctrl_gpio_set_config() - Apply config to given GPIO pin
  * @gpio: the GPIO pin number from the GPIO subsystem number space
@@ -893,11 +913,8 @@ EXPORT_SYMBOL_GPL(pinctrl_gpio_direction_output);
  */
 int pinctrl_gpio_set_config(unsigned gpio, unsigned long config)
 {
-	unsigned long configs[] = { config };
-	struct pinctrl_gpio_range *range = NULL;
 	struct pinctrl_dev *pctldev;
 	struct gpio_desc *desc;
-	int pin;
 	int dir;
 	int ret = -EPROBE_DEFER;
 
@@ -924,19 +941,15 @@ int pinctrl_gpio_set_config(unsigned gpio, unsigned long config)
 	 */
 	if (dir == 1) {
 		list_for_each_entry(pctldev, &pinctrldev_list, node) {
-			range = pinctrl_match_gpio_range(pctldev, gpio);
-			if (range == NULL)
-				continue;
-			pin = gpio_to_pin(range, gpio);
-			ret = pinconf_set_config(pctldev, pin, configs, ARRAY_SIZE(configs));
+			ret = pinctrl_set_config_if_match(pctldev, gpio, config);
+			if (ret)
+				break;
 		}
 	} else {
 		list_for_each_entry_reverse(pctldev, &pinctrldev_list, node) {
-			range = pinctrl_match_gpio_range(pctldev, gpio);
-			if (range == NULL)
-				continue;
-			pin = gpio_to_pin(range, gpio);
-			ret = pinconf_set_config(pctldev, pin, configs, ARRAY_SIZE(configs));
+			ret = pinctrl_set_config_if_match(pctldev, gpio, config);
+			if (ret)
+				break;
 		}
 	}
 
