@@ -1,8 +1,9 @@
-linux-hwe-edge (5.0.0-1.2~upboard1) UNRELEASED; urgency=medium
+linux-hwe-edge (5.0.0-1.2~upboard2) bionic; urgency=medium
 
-  * PLACEHOLDER
+  * UPBOARD: select F71808E watchdog driver as a built-in module
+  * pinctrl-core: translate gpio to pin before config
 
- -- Ubilinux Team <ubilinux@emutex.com>  Tue, 09 Jul 2019 10:34:08 +0100
+ -- Ubilinux Team <ubilinux@emutex.com>  Tue, 09 Jul 2019 13:04:08 +0100
 
 linux-hwe-edge (5.0.0-0.1~upboard1) bionic; urgency=medium
 
