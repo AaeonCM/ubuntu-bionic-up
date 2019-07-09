@@ -1,3 +1,9 @@
+linux-hwe-edge (5.0.0-1.2~upboard1) UNRELEASED; urgency=medium
+
+  * PLACEHOLDER
+
+ -- Ubilinux Team <ubilinux@emutex.com>  Tue, 09 Jul 2019 10:34:08 +0100
+
 linux-hwe-edge (5.0.0-0.1~upboard1) bionic; urgency=medium
 
   * Initial release. (Closes: #000)

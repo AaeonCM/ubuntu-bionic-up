@@ -670,7 +670,6 @@ cdc_subset
 cdns-csi2rx
 cdns-csi2tx
 cdns-pltfrm
-cec-gpio
 ceph
 cfag12864b
 cfag12864bfb
@@ -2296,6 +2295,7 @@ leds-regulator
 leds-ss4200
 leds-tca6507
 leds-tlc591xx
+leds-upboard
 leds-wm831x-status
 leds-wm8350
 ledtrig-activity
@@ -3299,6 +3299,7 @@ pinctrl-lewisburg
 pinctrl-madera
 pinctrl-mcp23s08
 pinctrl-sunrisepoint
+pinctrl-upboard
 pistachio-internal-dac
 pixcir_i2c_ts
 pkcs7_test_key
@@ -4315,6 +4316,7 @@ snd-soc-sst-bxt-da7219_max98357a
 snd-soc-sst-bxt-rt298
 snd-soc-sst-byt-cht-da7213
 snd-soc-sst-byt-cht-es8316
+snd-soc-sst-byt-cht-pcm512x
 snd-soc-sst-bytcr-rt5640
 snd-soc-sst-bytcr-rt5651
 snd-soc-sst-bytcr-rt5660
@@ -4903,6 +4905,7 @@ ums-sddr09
 ums-sddr55
 ums-usbat
 unix_diag
+upboard-fpga
 upd64031a
 upd64083
 upd78f0730
