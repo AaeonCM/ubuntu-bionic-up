@@ -348,7 +348,6 @@ static const struct dmi_system_id upboard_dmi_table[] __initconst = {
 			DMI_EXACT_MATCH(DMI_BOARD_NAME, "UP-WHL01"),
 			DMI_EXACT_MATCH(DMI_BOARD_VERSION, "V0.1"),
 		},
-		.driver_data = (void *)UPFPGA_QUIRK_UNINITIALISED,
 	},
 	{ },
 };

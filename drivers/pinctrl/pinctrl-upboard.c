@@ -839,14 +839,6 @@ static const struct dmi_system_id upboard_dmi_table[] __initconst = {
 		},
 		.driver_data = (void *)&upboard_up2_bios_info_v0_3,
 	},
-	{
-		.matches = { /* UP Xtreme */
-			DMI_EXACT_MATCH(DMI_SYS_VENDOR, "AAEON"),
-			DMI_EXACT_MATCH(DMI_BOARD_NAME, "UP-WHL01"),
-			DMI_EXACT_MATCH(DMI_BOARD_VERSION, "V0.1"),
-		},
-		.driver_data = (void *)&upboard_up_bios_info_dvt,
-	},
 	{ },
 };
 
