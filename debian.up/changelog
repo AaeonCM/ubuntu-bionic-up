@@ -1,3 +1,9 @@
+linux-hwe-edge (5.0.0-1.2~upboard3) UNRELEASED; urgency=medium
+
+  * PLACEHOLDER
+
+ -- Ubilinux Team <ubilinux@emutex.com>  Thu, 18 Jul 2019 11:09:43 +0100
+
 linux-hwe-edge (5.0.0-1.2~upboard2) bionic; urgency=medium
 
   * UPBOARD: select F71808E watchdog driver as a built-in module
