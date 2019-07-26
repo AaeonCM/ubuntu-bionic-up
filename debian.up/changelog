@@ -2,7 +2,7 @@ linux-hwe-edge (5.0.0-1.2~upboard4) bionic; urgency=medium
 
   * upboard pinctrl: drop regmap patches for UP Xtreme
 
- -- Ubilinux Team <ubilinux@emutex.com>  Thu, 18 Jul 2019 11:09:43 +0100
+ -- AAEON EU <software@aaeon.eu>  Thu, 18 Jul 2019 11:09:43 +0100
 
 linux-hwe-edge (5.0.0-1.2~upboard2) bionic; urgency=medium
 
