@@ -1,3 +1,13 @@
+linux-hwe-edge (5.0.0-1.2~upboard5) bionic; urgency=medium
+
+  * UPBOARD: I2C_DESIGNWARE_BAYTRAIL gets loaded also on Cherry Trail Platform
+  * platform/x86: upboard: Add gpio chip select for UP Board SPI
+  * spi: pxa2xx: Set dir and value when requesting cs gpio
+  * up: pinctrl: change SoC gpio references to use h/w pin offsets
+  * config: serial_dev configuration updated.
+
+ -- AAEON <aaeon_cm@aaeon.com>  Wed, 08 Apr 2020 10:48:45 +0800
+
 linux-hwe-edge (5.0.0-1.2~upboard4) bionic; urgency=medium
 
   * upboard pinctrl: drop regmap patches for UP Xtreme
