@@ -1,0 +1,6 @@
+linux-hwe-5.4 (5.4.0-45.49~upboard0) bionic; urgency=medium
+
+  * Initial release
+  * Based on Ubuntu version: linux-hwe-5.4: 5.4.0-45.49~18.04.2
+
+ -- AAEON <aaeon_cm@aaeon.com>  Tue, 01 Sep 2020 07:32:39 +0000
