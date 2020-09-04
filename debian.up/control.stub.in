@@ -10,7 +10,7 @@ Build-Depends:
  kernel-wedge,
  kmod <!stage1>,
  libcap-dev <!stage1>,
- makedumpfile [amd64 i386] <!stage1>,
+ makedumpfile [amd64] <!stage1>,
  libelf-dev <!stage1>,
  libnewt-dev <!stage1>,
  libiberty-dev <!stage1>,
@@ -22,7 +22,7 @@ Build-Depends:
  pkg-config <!stage1>,
  flex <!stage1>,
  bison <!stage1>,
- libunwind8-dev [amd64 arm64 armhf i386 ppc64el] <!stage1>,
+ libunwind8-dev [amd64] <!stage1>,
  liblzma-dev <!stage1>,
  openssl <!stage1>,
  libssl-dev <!stage1>,
@@ -34,7 +34,7 @@ Build-Depends:
  automake <!stage1>,
  libtool <!stage1>,
  uuid-dev <!stage1>,
- libnuma-dev [amd64 arm64 i386 ppc64el s390x] <!stage1>,
+ libnuma-dev [amd64] <!stage1>,
  dkms <!stage1>,
  curl <!stage1>,
 Build-Depends-Indep:
@@ -103,7 +103,7 @@ Description: Linux kernel version specific tools for version PKGVER
 
 Package: SRCPKGNAME-tools-PKGVER-ABINUM
 Build-Profiles: <!stage1>
-Architecture: i386 amd64 armhf arm64 ppc64el s390x
+Architecture: amd64
 Section: devel
 Priority: optional
 Depends: ${misc:Depends}, ${shlibs:Depends}, SRCPKGNAME-tools-common
@@ -127,7 +127,7 @@ Description: Linux kernel version specific cloud tools for version PKGVER
 
 Package: SRCPKGNAME-cloud-tools-PKGVER-ABINUM
 Build-Profiles: <!stage1>
-Architecture: i386 amd64 armhf
+Architecture: amd64
 Section: devel
 Priority: optional
 Depends: ${misc:Depends}, ${shlibs:Depends}, SRCPKGNAME-cloud-tools-common
