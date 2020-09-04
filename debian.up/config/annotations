@@ -783,8 +783,8 @@ CONFIG_SCR24X                                   policy<{'amd64': 'm', 'i386': 'm
 CONFIG_IPWIRELESS                               policy<{'amd64': 'm', 'i386': 'm'}>
 
 # Menu: Device Drivers >> Character devices >> Serial device bus
-CONFIG_SERIAL_DEV_BUS                           policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'i386': 'y', 'ppc64el': 'y', 's390x': 'y'}>
-CONFIG_SERIAL_DEV_CTRL_TTYPORT                  policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'i386': 'y', 'ppc64el': 'y', 's390x': 'y'}>
+CONFIG_SERIAL_DEV_BUS                           policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'i386': 'm', 'ppc64el': 'm', 's390x': 'm'}>
+CONFIG_SERIAL_DEV_CTRL_TTYPORT                  policy<{'amd64': '-', 'arm64': '-', 'armhf': '-', 'i386': '-', 'ppc64el': '-', 's390x': '-'}>
 #
 CONFIG_SERIAL_DEV_BUS                           note<LP:1739939>
 CONFIG_SERIAL_DEV_CTRL_TTYPORT                  note<LP:1739939>
@@ -2693,7 +2693,7 @@ CONFIG_I2C_CBUS_GPIO                            policy<{'amd64': 'm', 'arm64': '
 CONFIG_I2C_DESIGNWARE_PLATFORM                  policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'i386': 'y', 'ppc64el': 'y', 's390x': 'n'}>
 CONFIG_I2C_DESIGNWARE_SLAVE                     policy<{'amd64': 'n', 'arm64': 'n', 'armhf': 'n', 'i386': 'n', 'ppc64el': 'n', }>
 CONFIG_I2C_DESIGNWARE_PCI                       policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'i386': 'm', 'ppc64el': 'm', 's390x': 'n'}>
-CONFIG_I2C_DESIGNWARE_BAYTRAIL                  policy<{'amd64': 'y', 'i386': 'y'}>
+CONFIG_I2C_DESIGNWARE_BAYTRAIL                  policy<{'amd64': 'n', 'i386': 'n'}>
 CONFIG_I2C_EG20T                                policy<{'i386': 'm'}>
 CONFIG_I2C_EMEV2                                policy<{'amd64': 'n', 'arm64': 'n', 'armhf': 'm', 'i386': 'n', }>
 CONFIG_I2C_EXYNOS5                              policy<{'armhf': 'm'}>
@@ -8786,7 +8786,7 @@ CONFIG_USB                                      policy<{'amd64': 'y', 'arm64': '
 CONFIG_USB_ANNOUNCE_NEW_DEVICES                 policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'i386': 'y', 'ppc64el': 'y', }>
 CONFIG_USB_DEFAULT_PERSIST                      policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'i386': 'y', 'ppc64el': 'y', }>
 CONFIG_USB_DYNAMIC_MINORS                       policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'i386': 'y', 'ppc64el': 'y', }>
-CONFIG_USB_OTG                                  policy<{'amd64': 'n', 'arm64': 'n', 'armhf': 'n', 'i386': 'n', 'ppc64el': 'n', }>
+CONFIG_USB_OTG                                  policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'i386': 'y', 'ppc64el': 'y', }>
 CONFIG_USB_OTG_WHITELIST                        policy<{'amd64': 'n', 'arm64': 'n', 'armhf': 'n', 'i386': 'n', 'ppc64el': 'n', }>
 CONFIG_USB_OTG_BLACKLIST_HUB                    policy<{'amd64': 'n', 'arm64': 'n', 'armhf': 'n', 'i386': 'n', 'ppc64el': 'n', }>
 CONFIG_USB_LEDS_TRIGGER_USBPORT                 policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'i386': 'm', 'ppc64el': 'm', }>
@@ -9056,7 +9056,7 @@ CONFIG_USB_GADGET_DEBUG_FILES                   policy<{'amd64': 'n', 'arm64': '
 CONFIG_USB_GADGET_DEBUG_FS                      policy<{'amd64': 'n', 'arm64': 'n', 'armhf': 'n', 'i386': 'n', 'ppc64el': 'n', }>
 CONFIG_USB_GADGET_VBUS_DRAW                     policy<{'amd64': '2', 'arm64': '2', 'armhf': '2', 'i386': '2', 'ppc64el': '2', }>
 CONFIG_USB_GADGET_STORAGE_NUM_BUFFERS           policy<{'amd64': '2', 'arm64': '2', 'armhf': '2', 'i386': '2', 'ppc64el': '2', }>
-CONFIG_U_SERIAL_CONSOLE                         policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'i386': 'y', 'ppc64el': 'y', }>
+CONFIG_U_SERIAL_CONSOLE                         policy<{'amd64': 'n', 'arm64': 'n', 'armhf': 'n', 'i386': 'n', 'ppc64el': 'n', }>
 
 # Menu: Device Drivers >> USB support >> USB Gadget Support >> USB Gadget functions configurable through configfs
 CONFIG_USB_CONFIGFS                             policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'i386': 'm', 'ppc64el': 'm', }>
@@ -9428,7 +9428,7 @@ CONFIG_ADVANTECH_WDT                            policy<{'amd64': 'm', 'i386': 'm
 CONFIG_ALIM1535_WDT                             policy<{'amd64': 'm', 'i386': 'm'}>
 CONFIG_ALIM7101_WDT                             policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'i386': 'm', 'ppc64el': 'm', 's390x': 'n'}>
 CONFIG_EBC_C384_WDT                             policy<{'amd64': 'm', 'i386': 'm'}>
-CONFIG_F71808E_WDT                              policy<{'amd64': 'm', 'i386': 'm'}>
+CONFIG_F71808E_WDT                              policy<{'amd64': 'y', 'i386': 'y'}>
 CONFIG_SP5100_TCO                               policy<{'amd64': 'm', 'i386': 'm'}>
 CONFIG_SBC_FITPC2_WATCHDOG                      policy<{'amd64': 'm', 'i386': 'm'}>
 CONFIG_EUROTECH_WDT                             policy<{'amd64': 'm', 'i386': 'm'}>
@@ -11126,7 +11126,7 @@ CONFIG_BT_HCIUART_BCSP                          policy<{'amd64': 'y', 'arm64': '
 CONFIG_BT_HCIUART_ATH3K                         policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'i386': 'y', 'ppc64el': 'y', }>
 CONFIG_BT_HCIUART_3WIRE                         policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'i386': 'y', 'ppc64el': 'y', }>
 CONFIG_BT_HCIUART_INTEL                         policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'i386': 'y', 'ppc64el': 'y', }>
-CONFIG_BT_HCIUART_BCM                           policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'i386': 'y', 'ppc64el': 'y', }>
+CONFIG_BT_HCIUART_BCM                           policy<{'amd64': '-', 'arm64': '-', 'armhf': '-', 'i386': '-', 'ppc64el': '-', }>
 CONFIG_BT_HCIUART_RTL                           policy<{'amd64': 'y', 'arm64': 'y', 'i386': 'y'}>
 CONFIG_BT_HCIUART_QCA                           policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'i386': 'y', 'ppc64el': 'y', }>
 CONFIG_BT_HCIUART_AG6XX                         policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'i386': 'y', 'ppc64el': 'y', }>
