@@ -121,6 +121,7 @@ static struct gpiod_lookup_table up_spi_cs_gpiod_table = {
 	.table		= {
 		GPIO_LOOKUP_IDX("up-pinctrl",
 				SPI_CS1_DEFAULT_GPIO, "cs", 1, GPIO_ACTIVE_HIGH),
+	{}
 	},
 };
 
