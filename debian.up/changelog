@@ -1,3 +1,9 @@
+linux-hwe-5.4 (5.4.0-1.0~upboard2) bionic; urgency=medium
+
+  * Rebase kernel to Ubuntu-hwe-5.4-5.4.0-52.57~18.04.1
+
+ -- AAEON <aaeon_cm@aaeon.com>  Fri, 23 Oct 2020 16:09:19 +0800
+
 linux-hwe-5.4 (5.4.0-1.0~upboard1) bionic; urgency=medium
 
   * First release
