@@ -37,7 +37,7 @@ static int adc128_adc_conversion(struct adc128 *adc, u8 channel)
 
 	mutex_lock(&adc->lock);
 
-	adc->buffer[0] = channel << 3;
+	adc->buffer[0] = channel << 4;
 	adc->buffer[1] = 0;
 
 	ret = spi_write(adc->spi, &adc->buffer, 2);
