@@ -1,3 +1,9 @@
+linux-hwe-5.4 (5.4.0-1.0~upboard4) bionic; urgency=medium
+
+  *  GPIO: Add workaround to enable Open-Drain GPIO pins
+
+ -- AAEON <aaeon_cm@aaeon.com>  Fri, 13 Sep 2021 16:03:00 +0800
+
 linux-hwe-5.4 (5.4.0-1.0~upboard3) bionic; urgency=medium
 
   * Add the support for up-apl03
