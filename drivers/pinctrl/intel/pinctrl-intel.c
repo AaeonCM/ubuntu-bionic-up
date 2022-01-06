@@ -894,6 +894,11 @@ static int intel_gpio_get(struct gpio_chip *chip, unsigned int offset)
 	if (!(padcfg0 & PADCFG0_GPIOTXDIS))
 		return !!(padcfg0 & PADCFG0_GPIOTXSTATE);
 
+	/* Workaround to enable APL open-drain GPIO*/
+	if (!strcmp(chip->label, "INT3452:02") && offset >= 0 && offset < 4 &&
+		(padcfg0 & PADCFG0_GPIOTXDIS) && (padcfg0 & PADCFG0_GPIORXDIS))
+		return !!(padcfg0 & PADCFG0_GPIOTXSTATE);
+
 	return !!(padcfg0 & PADCFG0_GPIORXSTATE);
 }
 
@@ -920,6 +925,15 @@ static void intel_gpio_set(struct gpio_chip *chip, unsigned int offset,
 		padcfg0 |= PADCFG0_GPIOTXSTATE;
 	else
 		padcfg0 &= ~PADCFG0_GPIOTXSTATE;
+
+	/* Workaround to enable APL open-drain GPIO*/
+	if (!strcmp(chip->label, "INT3452:02") && offset >= 0 && offset < 4) {
+		if (value)
+			padcfg0 |= PADCFG0_GPIOTXDIS;
+		else
+			padcfg0 &= ~PADCFG0_GPIOTXDIS;
+	}
+
 	writel(padcfg0, reg);
 	raw_spin_unlock_irqrestore(&pctrl->lock, flags);
 }
