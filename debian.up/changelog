@@ -1,3 +1,10 @@
+linux-hwe-5.4 (5.4.0-1.0~upboard5) bionic; urgency=medium
+
+  *  Revert "ACPI / LPSS: Exclude I2C busses shared with PUNIT from pmc_atom_d3_mask"
+  *  ADC: Add the workaround to read all ADC values
+
+ -- AAEON <aaeon_cm@aaeon.com>  Fri, 07 Jan 2022 12:00:00 +0800
+
 linux-hwe-5.4 (5.4.0-1.0~upboard4) bionic; urgency=medium
 
   *  GPIO: Add workaround to enable Open-Drain GPIO pins
